@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { 
   BrainCircuit, Sparkles, User, Briefcase, MapPin, Clock, Sparkle, Loader2,
-  // 🌟 Safely introduce an additional X icon here for deleting/deregistering connections
+  // Safely introduce an additional X icon here for deleting/deregistering connections
   Database, GitCommit, CheckCircle2, X 
 } from "lucide-react";
 import { useEffect, useState } from "react";

@@ -141,7 +141,7 @@ export default function DashboardPage() {
             </h2>
 
             <div className="space-y-5 text-gray-300">
-              <p>NexusAI analyses:</p>
+              <p>NexusAI analyzes & synthesizes:</p>
 
               <ul className="space-y-3">
                 <li>• Core skill intersection</li>
@@ -149,16 +149,16 @@ export default function DashboardPage() {
                 <li>• Targeted role & position alignment</li>
                 <li>• Geographical region compatibility</li>
                 <li>• Workplace operational mode alignment</li>
-                <li>• Integrated matrix weighting logic</li>
+                <li>• Gemini-powered executive narrative synthesis</li>
               </ul>
 
               <div className="mt-10 p-6 rounded-2xl bg-black/30 border border-white/10">
                 <p className="text-blue-300 mb-2">
-                  AI Relationship Insight
+                  Engine Execution Insight
                 </p>
 
                 <p className="text-sm text-gray-400 leading-relaxed">
-                  “Our matching engine cross-references candidate matrices with localised operational constraints to ensure high-fidelity ecosystem integration.”
+                  “Our framework combines a deterministic scoring matrix with generative AI to deliver both mathematically validated rankings and high-fidelity text synthesis.”
                 </p>
               </div>
             </div>
