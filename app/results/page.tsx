@@ -3,12 +3,11 @@
 import { motion } from "framer-motion";
 import { 
   BrainCircuit, Sparkles, User, Briefcase, MapPin, Clock, Sparkle, Loader2,
-  // 额外安全引入 3 个新图标用于解题，绝不冲突
   Database, GitCommit, CheckCircle2 
 } from "lucide-react";
 import { useEffect, useState } from "react";
 
-// 保留你原本一模一样的 20 位候选人数据库，连脏数据 id_name 都完美保留
+// Mock candidate database representing ecosystem participants (Talent/Mentors)
 const CANDIDATES_DATABASE = [
   { id: "C001", name: "Sarah Tan", current_role: "AI Engineer", desired_position: "AI Engineer", skills: ["Python", "Machine Learning", "FastAPI", "SQL"], years_experience: 5, region: "Malaysia", work_mode: "Remote" },
   { id: "C002", name: "Jason Lee", current_role: "Frontend Developer", desired_position: "Full Stack Engineer", skills: ["React", "Node.js", "JavaScript", "SQL"], years_experience: 3, region: "Singapore", work_mode: "Hybrid" },
@@ -32,7 +31,7 @@ const CANDIDATES_DATABASE = [
   { id: "C020", name: "Sean Wong", current_role: "Software Developer", desired_position: "Backend Engineer", skills: ["Python", "FastAPI", "Docker", "MongoDB"], years_experience: 2, region: "Philippines", work_mode: "Remote" },
 ];
 
-// 🌟 新增：解题痛点2 - 历史参与反馈数据集，证明系统能读取历史成功率进行自演进
+// Historical engagement dataset: Used to calculate the Network Effect Bonus and drive self-evolution of the matching algorithm
 const PAST_ENGAGEMENTS_FEEDBACK = [
   { region: "Malaysia", domain: "Python", success_rate: 0.94 },
   { region: "Singapore", domain: "React", success_rate: 0.89 },
@@ -46,11 +45,11 @@ export default function ResultsPage() {
   const [aiSummaries, setAiSummaries] = useState<{ [key: string]: string }>({});
   const [loadingAI, setLoadingAI] = useState<{ [key: string]: boolean }>({});
 
-  // 🌟 新增状态：解题痛点1 - 用于持久化保存“可复用关系实体”的注册表
+  // State to maintain the live registry of deployed ecosystem linkages (First-class programmable entities)
   const [deployedLinkages, setDeployedLinkages] = useState<any[]>([]);
 
   useEffect(() => {
-    // 页面加载时，自动同步已部署的生态链接实体
+    // Automatically sync deployed ecosystem linkage entities from local storage on load
     const saved = localStorage.getItem("nexus_programmable_linkages");
     if (saved) {
       setDeployedLinkages(JSON.parse(saved));
@@ -140,7 +139,7 @@ export default function ResultsPage() {
         modeScore = 100;
       }
 
-      // 保留你一模一样、原汁原味的基础分数公式
+      // Calculate baseline matching score using a weighted matrix logic
       const baseScore = Math.round(
         skillScore * 0.35 +
         expScore * 0.25 +

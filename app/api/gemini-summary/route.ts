@@ -1,15 +1,15 @@
 import { GoogleGenAI } from "@google/genai";
 import { NextResponse } from "next/server";
 
-// 初始化 Gemini 客户端，它会自动读取环境变量中的 GEMINI_API_KEY
+// Initialize the Gemini client, which automatically reads the GEMINI_API_KEY from environment variables
 const ai = new GoogleGenAI({});
 
 export async function POST(request: Request) {
   try {
-    // 从前端传过来的请求体中，获取当前这位候选人的聚合数据
+    // Extract the aggregated data of the current candidate from the frontend request body
     const { candidateName, score, role, skills, experience, location, matchTarget } = await request.json();
 
-    // 构建一个精简、严谨的 Prompt 喂给 AI
+    // Construct a concise and rigorous prompt to feed into the AI
     const prompt = `
         You are an expert HR ecosystem analyst. 
         Analyze why the candidate ${candidateName} is a top match for the position "${matchTarget.position}" at "${matchTarget.company}".
@@ -38,7 +38,7 @@ export async function POST(request: Request) {
         5. Return PLAIN TEXT only.
     `;
 
-    // 调用轻量、快速且免费额度高的 gemini-2.5-flash 模型
+    // Call gemini-2.5-flash model
     const response = await ai.models.generateContent({
       model: "gemini-2.5-flash",
       contents: prompt,
@@ -46,7 +46,7 @@ export async function POST(request: Request) {
 
     const summary = response.text || "Failed to generate AI executive summary.";
 
-    // 将 AI 总结安全的返回给前端
+    // Return the AI summary safely to the frontend
     return NextResponse.json({ summary });
   } catch (error: any) {
     console.error("Gemini API Error:", error);
