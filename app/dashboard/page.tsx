@@ -9,7 +9,7 @@ export default function DashboardPage() {
 
   const [loading, setLoading] = useState(false);
 
-  // 1. 修改状态结构，对应你的 6 个新字段
+  // Form State: An object containing your 6 required fields, all initially set to empty strings ""
   const [form, setForm] = useState({
     company: "",
     position: "",
@@ -19,6 +19,7 @@ export default function DashboardPage() {
     workMode: "",
   });
 
+  // Handler function triggered when the user clicks the "Generate AI Matches" button
   const handleSubmit = async () => {
     setLoading(true);
 
@@ -50,7 +51,7 @@ export default function DashboardPage() {
         </div>
 
         <div className="grid lg:grid-cols-2 gap-8">
-          {/* LEFT SIDE - 修改后的输入框区域 */}
+          {/* LEFT SIDE - The company requirement form */}
           <div className="bg-white/5 border border-white/10 rounded-3xl p-8">
             <h2 className="text-2xl font-semibold mb-6">
               Company Requirement Form
@@ -133,7 +134,7 @@ export default function DashboardPage() {
             </div>
           </div>
 
-          {/* RIGHT SIDE */}
+          {/* RIGHT SIDE - Information display card with a blue-to-purple gradient background */}
           <div className="bg-gradient-to-br from-blue-500/10 to-purple-500/10 border border-white/10 rounded-3xl p-8 flex flex-col justify-center">
             <h2 className="text-3xl font-bold mb-6">
               AI Relationship Intelligence

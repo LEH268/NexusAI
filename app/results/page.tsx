@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { BrainCircuit, Sparkles, User, Briefcase, MapPin, Clock } from "lucide-react";
 import { useEffect, useState } from "react";
 
-// 1. 把你的 CSV 数据转换为前端本地的 Mock Database
+// create a mock candidate database with 20 candidates, each having id, name, current_role, desired_position, skills (array), years_experience, region, work_mode
 const CANDIDATES_DATABASE = [
   { id: "C001", name: "Sarah Tan", current_role: "AI Engineer", desired_position: "AI Engineer", skills: ["Python", "Machine Learning", "FastAPI", "SQL"], years_experience: 5, region: "Malaysia", work_mode: "Remote" },
   { id: "C002", name: "Jason Lee", current_role: "Frontend Developer", desired_position: "Full Stack Engineer", skills: ["React", "Node.js", "JavaScript", "SQL"], years_experience: 3, region: "Singapore", work_mode: "Hybrid" },
@@ -39,7 +39,7 @@ export default function ResultsPage() {
         const parsedReq = JSON.parse(storedData);
         setRequirements(parsedReq);
         
-        // 2. 核心算法：根据权重计算匹配度并筛选出 Top 3
+        // Core Execution: Runs matching algorithms against requirements to build recommendations
         calculateMatches(parsedReq);
       } catch (error) {
         console.error("Failed to parse jobRequirement:", error);
@@ -48,14 +48,15 @@ export default function ResultsPage() {
   }, []);
 
   const calculateMatches = (req: any) => {
-    // 预处理用户输入的技能列表
+    // Standardises user-inputted strings into an isolated array of lowercase, clean skill strings
     const userSkills = req.requireSkills
       ? req.requireSkills.split(/[,;]/).map((s: string) => s.trim().toLowerCase()).filter(Boolean)
       : [];
     
-    // 提取用户期望的最低年限数字 (比如从 "3+ years" 或 "3" 中提取出 3)
+    // RegEx filters string input (e.g., "3+ years" -> 3) to process strict integer arithmetic comparisons
     const minExp = req.minimumExperience ? parseInt(req.minimumExperience.replace(/[^0-9]/g, "")) || 0 : 0;
 
+    // Iterates across each profile in the candidate database to evaluate compatibility scores
     const scoredCandidates = CANDIDATES_DATABASE.map((candidate) => {
       let skillScore = 0;
       let expScore = 0;
@@ -63,39 +64,39 @@ export default function ResultsPage() {
       let regionScore = 0;
       let modeScore = 0;
 
-      // ① Skill Match (权重 30%) - 计算候选人掌握了多少个用户要求的技能
+      // 1) Skill Match (Weight: 30%) - Computes intersection match percentages across required skills
       if (userSkills.length > 0) {
         const matchedSkillsCount = candidate.skills.filter((skill) =>
           userSkills.includes(skill.toLowerCase())
         ).length;
         skillScore = (matchedSkillsCount / userSkills.length) * 100;
       } else {
-        skillScore = 100; // 如果用户没填技能要求，默认满分
+        skillScore = 100; // If the user hasn't specified any skills, default to full score
       }
 
-      // ② Experience Match (权重 25%) - 候选人年限大于或等于要求即可满分，否则按比例给分
+      // 2) Experience Match (Weight: 25%) - Grants max score if experience threshold met, otherwise scores proportionally
       if (minExp === 0) {
         expScore = 100;
       } else {
         expScore = candidate.years_experience >= minExp ? 100 : (candidate.years_experience / minExp) * 100;
       }
 
-      // ③ Position Match (权重 15%) - 模糊匹配期望职位
+      // 3) Position Match (Weight: 15%) - Performs fuzzy/substring lookups across targeted roles
       if (req.position && candidate.desired_position.toLowerCase().includes(req.position.toLowerCase())) {
         posScore = 100;
       }
 
-      // ④ Region Match (权重 15%) - 匹配地区
+      // 4) Region Match (Weight: 15%) - Matches the region
       if (req.region && candidate.region.toLowerCase() === req.region.toLowerCase()) {
         regionScore = 100;
       }
 
-      // ⑤ Work Mode Match (权重 15%) - 匹配工作模式
+      // 5) Work Mode Match (Weight: 15%) - Matches the work mode
       if (req.workMode && candidate.work_mode.toLowerCase() === req.workMode.toLowerCase()) {
         modeScore = 100;
       }
 
-      // 按照你给的权重比例计算最终总分
+      // Applies weighted distribution algorithm to produce an aggregate integer match rating out of 100
       const finalScore = Math.round(
         skillScore * 0.30 +
         expScore * 0.25 +
@@ -104,7 +105,7 @@ export default function ResultsPage() {
         modeScore * 0.15
       );
 
-      // 生成 AI 动态分析报告解释
+      // generates context-aware analysis sentences for the user interface card block
       const explanation = [
         `Matched ${candidate.skills.filter(s => userSkills.includes(s.toLowerCase())).length} required core skills.`,
         `Has ${candidate.years_experience} years of experience (Target: ${minExp}+ years).`,
@@ -123,7 +124,7 @@ export default function ResultsPage() {
       };
     });
 
-    // 排序：分数从高到低，并截取前 3 名
+    // Sorts collection in descending order based on scores and clips array down to the top 3 items
     const sorted = scoredCandidates
       .sort((a, b) => b.finalScore - a.finalScore)
       .slice(0, 3);
@@ -147,10 +148,10 @@ export default function ResultsPage() {
             NexusAI analyzed your CSV candidate database dynamically using weighted matching matrices.
           </p>
 
-          {/* 用户输入的目标看板 */}
+          {/* User Targets Monitor Dashboard View: Displays structural inputs read from form state */}
           {requirements && (
             <div className="mt-6 p-5 rounded-2xl bg-white/5 border border-white/10 max-w-3xl">
-              <p className="text-sm text-blue-400 font-semibold mb-3">🎯 Your Match Target (From Form):</p>
+              <p className="text-sm text-blue-400 font-semibold mb-3">Your Match Target (From Form):</p>
               <div className="grid grid-cols-2 md:grid-cols-3 gap-4 text-sm">
                 <div><span className="text-gray-500 block">Company</span><span className="text-gray-200">{requirements.company || "N/A"}</span></div>
                 <div><span className="text-gray-500 block">Position</span><span className="text-gray-200">{requirements.position || "N/A"}</span></div>
@@ -163,7 +164,7 @@ export default function ResultsPage() {
           )}
         </div>
 
-        {/* Top 3 匹配候选人卡片 */}
+        {/* Top 3 Profile Matching Cards Grid container */}
         <div className="grid lg:grid-cols-3 gap-6">
           {topMatches.map((candidate, index) => (
             <motion.div
@@ -173,7 +174,7 @@ export default function ResultsPage() {
               transition={{ delay: index * 0.2 }}
               className="bg-white/5 border border-white/10 rounded-3xl p-7 hover:border-blue-500/30 transition relative overflow-hidden"
             >
-              {/* Top 1, 2, 3 角标 */}
+              {/* Dynamic Placement Banner reflecting the candidate's ranking index position */}
               <div className="absolute top-0 right-0 bg-blue-500 text-black text-xs font-bold px-3 py-1 rounded-bl-xl">
                 RANK #{index + 1}
               </div>
@@ -192,14 +193,14 @@ export default function ResultsPage() {
                 </div>
               </div>
 
-              {/* 核心基础资料档案 */}
+              {/* Core Basic Information Profile */}
               <div className="mt-6 space-y-2 text-sm text-gray-400 border-t border-b border-white/5 py-4">
                 <p className="flex items-center gap-2"><Briefcase className="w-4 h-4 text-gray-500"/> Desired Role: <span className="text-gray-200">{candidate.desired_position}</span></p>
                 <p className="flex items-center gap-2"><Clock className="w-4 h-4 text-gray-500"/> Experience: <span className="text-gray-200">{candidate.years_experience} years</span></p>
                 <p className="flex items-center gap-2"><MapPin className="w-4 h-4 text-gray-500"/> Location: <span className="text-gray-200">{candidate.region} ({candidate.work_mode})</span></p>
               </div>
 
-              {/* 掌握的技术栈 */}
+              {/* Skill Pill Badges Container Block */}
               <div className="mt-4">
                 <p className="text-xs text-gray-500 mb-2">Candidate Skills:</p>
                 <div className="flex flex-wrap gap-1.5">
@@ -211,7 +212,7 @@ export default function ResultsPage() {
                 </div>
               </div>
 
-              {/* AI 动态计算出来的匹配因果解释 */}
+              {/* Analytical Breakdown Module displaying dynamically formulated rationale sentences */}
               <div className="mt-6">
                 <div className="flex items-center gap-2 mb-3">
                   <BrainCircuit className="w-5 h-5 text-purple-400" />
