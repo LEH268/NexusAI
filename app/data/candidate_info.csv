@@ -1,0 +1,21 @@
+candidate_id,name,current_role,desired_position,skills,years_experience,region,work_mode
+C001,Sarah Tan,AI Engineer,AI Engineer,"Python;Machine Learning;FastAPI;SQL",5,Malaysia,Remote
+C002,Jason Lee,Frontend Developer,Full Stack Engineer,"React;Node.js;JavaScript;SQL",3,Singapore,Hybrid
+C003,Amanda Lim,Machine Learning Engineer,AI Engineer,"Python;TensorFlow;FastAPI;Docker",4,Malaysia,Remote
+C004,Kevin Wong,Backend Engineer,Backend Engineer,"Python;FastAPI;PostgreSQL;Docker",6,Malaysia,Hybrid
+C005,Michelle Ong,Data Scientist,Machine Learning Engineer,"Python;Pandas;Machine Learning;SQL",4,Singapore,Remote
+C006,Daniel Chua,Software Engineer,Backend Engineer,"Java;Spring Boot;MySQL;Docker",5,Malaysia,Onsite
+C007,Chloe Tan,AI Research Engineer,AI Engineer,"Python;PyTorch;Machine Learning;FastAPI",7,Singapore,Remote
+C008,Ethan Lim,Full Stack Developer,Full Stack Engineer,"React;Node.js;Python;MongoDB",3,Malaysia,Hybrid
+C009,Grace Ng,Data Engineer,Data Engineer,"Python;SQL;Airflow;Spark",5,Malaysia,Remote
+C010,Ryan Teo,Cloud Engineer,DevOps Engineer,"AWS;Docker;Kubernetes;Python",6,Singapore,Hybrid
+C011,Sophie Yap,ML Engineer,AI Engineer,"Python;Scikit-learn;FastAPI;TensorFlow",4,Malaysia,Remote
+C012,Marcus Ho,Backend Developer,Backend Engineer,"Python;Django;PostgreSQL;Redis",3,Indonesia,Remote
+C013,Natalie Goh,Product Engineer,Full Stack Engineer,"Python;React;FastAPI;SQL",2,Malaysia,Hybrid
+C014,Brandon Tan,Software Engineer,Machine Learning Engineer,"C++;Python;Machine Learning;Linux",5,Singapore,Onsite
+C015,Rachel Lim,AI Developer,AI Engineer,"Python;OpenCV;TensorFlow;FastAPI",4,Malaysia,Remote
+C016,Adrian Lee,DevOps Engineer,DevOps Engineer,"Docker;Kubernetes;AWS;Linux",6,Thailand,Hybrid
+C017,Vanessa Ong,Data Analyst,Data Scientist,"Python;SQL;Power BI;Pandas",3,Malaysia,Remote
+C018,Justin Ng,Full Stack Engineer,Backend Engineer,"React;FastAPI;Python;PostgreSQL",4,Singapore,Hybrid
+C019,Emily Chua,Machine Learning Engineer,AI Engineer,"Python;PyTorch;NLP;FastAPI",5,Malaysia,Remote
+C020,Sean Wong,Software Developer,Backend Engineer,"Python;FastAPI;Docker;MongoDB",2,Philippines,Remote
