@@ -101,7 +101,7 @@ export default function DashboardPage() {
               {/* 5. Region */}
               <InputField
                 label="Region"
-                placeholder="North America / Remote"
+                placeholder="Malaysia"
                 value={form.region}
                 onChange={(e: any) =>
                   setForm({ ...form, region: e.target.value })
@@ -111,7 +111,7 @@ export default function DashboardPage() {
               {/* 6. Work Mode */}
               <InputField
                 label="Work Mode"
-                placeholder="Full-time / Part-time"
+                placeholder="Onsite / Remote / Hybrid"
                 value={form.workMode}
                 onChange={(e: any) =>
                   setForm({ ...form, workMode: e.target.value })
