@@ -1,0 +1,202 @@
+[
+  {
+    "id": "cand_001",
+    "name": "Sarah Tan",
+    "skills": ["Python", "AI/ML", "Fintech"],
+    "experience": "5 years",
+    "personality": "Adaptive",
+    "industry": "Fintech",
+    "startup_experience": true,
+    "location": "Singapore"
+  },
+  {
+    "id": "cand_002",
+    "name": "Jason Lee",
+    "skills": ["React", "Blockchain", "Smart Contracts"],
+    "experience": "3 years",
+    "personality": "Creative",
+    "industry": "Web3",
+    "startup_experience": false,
+    "location": "Hong Kong"
+  },
+  {
+    "id": "cand_003",
+    "name": "Priya Sharma",
+    "skills": ["Data Science", "Python", "SQL", "Tableau"],
+    "experience": "7 years",
+    "personality": "Analytical",
+    "industry": "E-commerce",
+    "startup_experience": true,
+    "location": "India"
+  },
+  {
+    "id": "cand_004",
+    "name": "Chen Wei",
+    "skills": ["React", "Node.js", "TypeScript"],
+    "experience": "4 years",
+    "personality": "Detail-oriented",
+    "industry": "SaaS",
+    "startup_experience": true,
+    "location": "Shanghai"
+  },
+  {
+    "id": "cand_005",
+    "name": "Maria Garcia",
+    "skills": ["Product Management", "UX Design", "User Research"],
+    "experience": "6 years",
+    "personality": "Empathetic",
+    "industry": "Mobile Apps",
+    "startup_experience": false,
+    "location": "Latin America"
+  },
+  {
+    "id": "cand_006",
+    "name": "Ahmed Hassan",
+    "skills": ["DevOps", "AWS", "Kubernetes", "Terraform"],
+    "experience": "8 years",
+    "personality": "Strategic",
+    "industry": "Cloud Infrastructure",
+    "startup_experience": true,
+    "location": "Dubai"
+  },
+  {
+    "id": "cand_007",
+    "name": "Lisa Wang",
+    "skills": ["iOS Development", "Swift", "AR/VR"],
+    "experience": "5 years",
+    "personality": "Innovative",
+    "industry": "Gaming",
+    "startup_experience": true,
+    "location": "Taipei"
+  },
+  {
+    "id": "cand_008",
+    "name": "Rohan Patel",
+    "skills": ["Machine Learning", "PyTorch", "Computer Vision"],
+    "experience": "4 years",
+    "personality": "Curious",
+    "industry": "AI/Computer Vision",
+    "startup_experience": false,
+    "location": "Bangalore"
+  },
+  {
+    "id": "cand_009",
+    "name": "Emma Johnson",
+    "skills": ["Backend Development", "Go", "gRPC", "Database Design"],
+    "experience": "6 years",
+    "personality": "Pragmatic",
+    "industry": "Infrastructure",
+    "startup_experience": true,
+    "location": "Australia"
+  },
+  {
+    "id": "cand_010",
+    "name": "Alex Kim",
+    "skills": ["Full Stack", "React", "Python", "Django"],
+    "experience": "5 years",
+    "personality": "Collaborative",
+    "industry": "EdTech",
+    "startup_experience": true,
+    "location": "Seoul"
+  },
+  {
+    "id": "cand_011",
+    "name": "Fatima Abdulla",
+    "skills": ["Cybersecurity", "Penetration Testing", "Security Architecture"],
+    "experience": "7 years",
+    "personality": "Meticulous",
+    "industry": "Security",
+    "startup_experience": false,
+    "location": "Abu Dhabi"
+  },
+  {
+    "id": "cand_012",
+    "name": "Marco Rossi",
+    "skills": ["Rust", "Systems Programming", "Game Development"],
+    "experience": "6 years",
+    "personality": "Perfectionist",
+    "industry": "Gaming",
+    "startup_experience": true,
+    "location": "Italy"
+  },
+  {
+    "id": "cand_013",
+    "name": "Aisha Mohammed",
+    "skills": ["Product Strategy", "Analytics", "Growth Marketing"],
+    "experience": "8 years",
+    "personality": "Driven",
+    "industry": "FinTech",
+    "startup_experience": true,
+    "location": "Kenya"
+  },
+  {
+    "id": "cand_014",
+    "name": "David Zhang",
+    "skills": ["Java", "Spring Boot", "Microservices"],
+    "experience": "9 years",
+    "personality": "Reliable",
+    "industry": "Enterprise Software",
+    "startup_experience": false,
+    "location": "Beijing"
+  },
+  {
+    "id": "cand_015",
+    "name": "Sophie Martin",
+    "skills": ["Design Systems", "UI/UX", "Figma", "Design Thinking"],
+    "experience": "5 years",
+    "personality": "Creative",
+    "industry": "Design Tools",
+    "startup_experience": true,
+    "location": "Paris"
+  },
+  {
+    "id": "cand_016",
+    "name": "Kenji Tanaka",
+    "skills": ["Quantum Computing", "Python", "Q#"],
+    "experience": "3 years",
+    "personality": "Visionary",
+    "industry": "Quantum Tech",
+    "startup_experience": true,
+    "location": "Tokyo"
+  },
+  {
+    "id": "cand_017",
+    "name": "Isabella Santos",
+    "skills": ["Finance", "Risk Management", "Quantitative Analysis"],
+    "experience": "10 years",
+    "personality": "Conservative",
+    "industry": "Finance",
+    "startup_experience": false,
+    "location": "Brazil"
+  },
+  {
+    "id": "cand_018",
+    "name": "Michael O'Brien",
+    "skills": ["React Native", "Mobile Development", "Firebase"],
+    "experience": "5 years",
+    "personality": "Adaptable",
+    "industry": "Mobile Apps",
+    "startup_experience": true,
+    "location": "Ireland"
+  },
+  {
+    "id": "cand_019",
+    "name": "Nina Patel",
+    "skills": ["Healthcare Tech", "HIPAA Compliance", "Telemedicine"],
+    "experience": "6 years",
+    "personality": "Compassionate",
+    "industry": "HealthTech",
+    "startup_experience": true,
+    "location": "San Francisco"
+  },
+  {
+    "id": "cand_020",
+    "name": "Carlos Mendez",
+    "skills": ["Business Development", "Sales", "Strategic Partnerships"],
+    "experience": "8 years",
+    "personality": "Persuasive",
+    "industry": "B2B SaaS",
+    "startup_experience": true,
+    "location": "Mexico"
+  }
+]
