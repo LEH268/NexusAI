@@ -1,4 +1,0 @@
-job_id,company_name,position,required_skills,minimum_experience,region,work_mode,created_at
-J001,NexusTech,AI Engineer,"Python;FastAPI;Machine Learning",3,Malaysia,Remote,2026-05-16 09:00
-J002,FinVerse,Backend Engineer,"Python;PostgreSQL;Docker",2,Singapore,Hybrid,2026-05-16 09:15
-J003,CloudNova,DevOps Engineer,"AWS;Docker;Kubernetes",4,Malaysia,Hybrid,2026-05-16 09:30
