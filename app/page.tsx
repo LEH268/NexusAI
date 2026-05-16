@@ -20,7 +20,7 @@ export default function HomePage() {
           href="/dashboard"
           className="px-5 py-2 rounded-full border border-white/20 hover:bg-white/10 transition"
         >
-          Launch Demo
+          Get Started
         </Link>
       </nav>
 
@@ -54,7 +54,7 @@ export default function HomePage() {
               href="/dashboard"
               className="px-7 py-4 rounded-2xl bg-blue-500 hover:bg-blue-600 transition flex items-center gap-2 font-medium"
             >
-              Try Demo
+              Get Started
               <ArrowRight className="w-5 h-5" />
             </Link>
           </div>

@@ -61,7 +61,7 @@ export default function DashboardPage() {
               {/* 1. Company */}
               <InputField
                 label="Company"
-                placeholder="NexusCorp"
+                placeholder="eg: NexusCorp"
                 value={form.company}
                 onChange={(e: any) =>
                   setForm({ ...form, company: e.target.value })
@@ -71,7 +71,7 @@ export default function DashboardPage() {
               {/* 2. Position */}
               <InputField
                 label="Position"
-                placeholder="AI Engineer"
+                placeholder="eg: AI Engineer"
                 value={form.position}
                 onChange={(e: any) =>
                   setForm({ ...form, position: e.target.value })
@@ -81,7 +81,7 @@ export default function DashboardPage() {
               {/* 3. Require Skills */}
               <InputField
                 label="Require Skills"
-                placeholder="Python, React, LLMs"
+                placeholder="eg: Python, React, LLMs, etc"
                 value={form.requireSkills}
                 onChange={(e: any) =>
                   setForm({ ...form, requireSkills: e.target.value })
@@ -91,7 +91,7 @@ export default function DashboardPage() {
               {/* 4. Minimum Experience */}
               <InputField
                 label="Minimum Experience"
-                placeholder="2+ years"
+                placeholder="eg: 2+ years"
                 value={form.minimumExperience}
                 onChange={(e: any) =>
                   setForm({ ...form, minimumExperience: e.target.value })
@@ -101,7 +101,7 @@ export default function DashboardPage() {
               {/* 5. Region */}
               <InputField
                 label="Region"
-                placeholder="North America / Remote"
+                placeholder="eg: Malaysia"
                 value={form.region}
                 onChange={(e: any) =>
                   setForm({ ...form, region: e.target.value })
@@ -111,7 +111,7 @@ export default function DashboardPage() {
               {/* 6. Work Mode */}
               <InputField
                 label="Work Mode"
-                placeholder="Full-time / Part-time"
+                placeholder="Onsite / Remote / Hybrid"
                 value={form.workMode}
                 onChange={(e: any) =>
                   setForm({ ...form, workMode: e.target.value })
@@ -128,7 +128,7 @@ export default function DashboardPage() {
                     Building Ecosystem Relationships...
                   </>
                 ) : (
-                  "Generate AI Matches"
+                  "Find Best Matches"
                 )}
               </button>
             </div>
@@ -141,15 +141,15 @@ export default function DashboardPage() {
             </h2>
 
             <div className="space-y-5 text-gray-300">
-              <p>NexusAI analyzes:</p>
+              <p>NexusAI analyses:</p>
 
               <ul className="space-y-3">
-                <li>• Skill compatibility</li>
-                <li>• Industry alignment</li>
-                <li>• Startup ecosystem experience</li>
-                <li>• Team adaptability</li>
-                <li>• Relationship success patterns</li>
-                <li>• Ecosystem collaboration history</li>
+                <li>• Core skill intersection</li>
+                <li>• Minimum experience validation</li>
+                <li>• Targeted role & position alignment</li>
+                <li>• Geographical region compatibility</li>
+                <li>• Workplace operational mode alignment</li>
+                <li>• Integrated matrix weighting logic</li>
               </ul>
 
               <div className="mt-10 p-6 rounded-2xl bg-black/30 border border-white/10">
@@ -158,8 +158,7 @@ export default function DashboardPage() {
                 </p>
 
                 <p className="text-sm text-gray-400 leading-relaxed">
-                  “Our AI continuously learns from successful ecosystem
-                  engagements to improve future relationship recommendations.”
+                  “Our matching engine cross-references candidate matrices with localised operational constraints to ensure high-fidelity ecosystem integration.”
                 </p>
               </div>
             </div>

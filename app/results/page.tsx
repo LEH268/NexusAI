@@ -98,11 +98,11 @@ export default function ResultsPage() {
 
       // Applies weighted distribution algorithm to produce an aggregate integer match rating out of 100
       const finalScore = Math.round(
-        skillScore * 0.30 +
+        skillScore * 0.35 +
         expScore * 0.25 +
-        posScore * 0.15 +
-        regionScore * 0.15 +
-        modeScore * 0.15
+        posScore * 0.2 +
+        regionScore * 0.1 +
+        modeScore * 0.1
       );
 
       // generates context-aware analysis sentences for the user interface card block
@@ -145,7 +145,7 @@ export default function ResultsPage() {
           <h1 className="text-5xl font-bold">Top Relationship Matches</h1>
 
           <p className="text-gray-400 mt-4 text-lg">
-            NexusAI analyzed your CSV candidate database dynamically using weighted matching matrices.
+            NexusAI analyzed your candidate database dynamically using weighted matching matrices.
           </p>
 
           {/* User Targets Monitor Dashboard View: Displays structural inputs read from form state */}
