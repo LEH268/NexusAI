@@ -9,13 +9,14 @@ export default function DashboardPage() {
 
   const [loading, setLoading] = useState(false);
 
+  // 1. 修改状态结构，对应你的 6 个新字段
   const [form, setForm] = useState({
+    company: "",
     position: "",
-    industry: "",
-    experience: "",
+    requireSkills: "",
+    minimumExperience: "",
+    region: "",
     workMode: "",
-    skills: "",
-    culture: "",
   });
 
   const handleSubmit = async () => {
@@ -49,13 +50,24 @@ export default function DashboardPage() {
         </div>
 
         <div className="grid lg:grid-cols-2 gap-8">
-          {/* LEFT SIDE */}
+          {/* LEFT SIDE - 修改后的输入框区域 */}
           <div className="bg-white/5 border border-white/10 rounded-3xl p-8">
             <h2 className="text-2xl font-semibold mb-6">
               Company Requirement Form
             </h2>
 
             <div className="space-y-5">
+              {/* 1. Company */}
+              <InputField
+                label="Company"
+                placeholder="NexusCorp"
+                value={form.company}
+                onChange={(e: any) =>
+                  setForm({ ...form, company: e.target.value })
+                }
+              />
+
+              {/* 2. Position */}
               <InputField
                 label="Position"
                 placeholder="AI Engineer"
@@ -65,48 +77,43 @@ export default function DashboardPage() {
                 }
               />
 
+              {/* 3. Require Skills */}
               <InputField
-                label="Industry"
-                placeholder="Fintech"
-                value={form.industry}
+                label="Require Skills"
+                placeholder="Python, React, LLMs"
+                value={form.requireSkills}
                 onChange={(e: any) =>
-                  setForm({ ...form, industry: e.target.value })
+                  setForm({ ...form, requireSkills: e.target.value })
                 }
               />
 
+              {/* 4. Minimum Experience */}
               <InputField
-                label="Experience"
-                placeholder="3+ years"
-                value={form.experience}
+                label="Minimum Experience"
+                placeholder="2+ years"
+                value={form.minimumExperience}
                 onChange={(e: any) =>
-                  setForm({ ...form, experience: e.target.value })
+                  setForm({ ...form, minimumExperience: e.target.value })
                 }
               />
 
+              {/* 5. Region */}
               <InputField
-                label="Remote / Hybrid"
-                placeholder="Remote"
+                label="Region"
+                placeholder="North America / Remote"
+                value={form.region}
+                onChange={(e: any) =>
+                  setForm({ ...form, region: e.target.value })
+                }
+              />
+
+              {/* 6. Work Mode */}
+              <InputField
+                label="Work Mode"
+                placeholder="Full-time / Part-time"
                 value={form.workMode}
                 onChange={(e: any) =>
                   setForm({ ...form, workMode: e.target.value })
-                }
-              />
-
-              <InputField
-                label="Skills"
-                placeholder="Python, AI, Machine Learning"
-                value={form.skills}
-                onChange={(e: any) =>
-                  setForm({ ...form, skills: e.target.value })
-                }
-              />
-
-              <InputField
-                label="Company Culture"
-                placeholder="Fast-paced startup"
-                value={form.culture}
-                onChange={(e: any) =>
-                  setForm({ ...form, culture: e.target.value })
                 }
               />
 
